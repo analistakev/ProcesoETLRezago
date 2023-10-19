@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "lecturarezagos",
+  "private_key_id": "94845231b3d7afce043b6c807ab02256e036cdcf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDtOYrobHDTZOss\n0dDplkkzPgaXM8+j/STkVLd+HNT2HrbW+dLbTjwUhcFv9LEbuDA4Oj5TIpbAyvVL\nv+sSrNSjU+X2BcXsNb0DNpiL8Nj5FaL3/9PAuGY+nt+5ti4/XwVxMeHDYdR1yW5I\nmGSMl6DfLf4bFnkEld9n4oaB12PpGKJdMsvHKTletYiIyXRHs7QOJtYWtZCKfe6g\n8W6NcU8ecmEgWP6pZCcc3T+qnDh7YX9V4CBAwR/oWGxSZOOJcRZbuQ6Xzsy9s29q\nwOQIpRSacsPzkbNwhQN0Ck8phuoGK/tlrNXYwr6NsHxxA8Cc+SaaMwuob+/zgQnw\nCfJ95CvJAgMBAAECggEAMlbanjWcv48TxKAFd/v3LpOD7IQHFOJ7+KPtiCpwGoYs\nAHRlBTqVzzkO8kX3a01rlhLt9NBLM0AeS2O/a2gXe00raEiTVmuU32CvgEqskDbC\nLWQxOB0pPTKTgSIisDnmur1+Dertnc0PxQHpnFf0wEdPO8pKBeoTzUSpjFX7kpPK\nAEzJEsDfE4zMryipSHWqtGWGO72VbV7dlZuqIMCtFJ5lpmpLYj3ANmzT5j2LzxYO\nbWqoMEu1EekOOckoZtaJR8zEK7M/v/jWyTzWsnY7sOlohstk5+BNNQRczt/sPJj5\nBCa6CQUzPn25lv3y1BgpQDfSecGGylu3gK60xYlAMQKBgQD/hwBob/Kg6/J6aN5s\nJiYLpZ531dgjnc+tYCDERKtlZV0vi4/Rpqt3NpS3wzsVD1GJO8mas6TcZa2Lcv73\ns8EJuDbQsu+uP5ufQb2SMpKOmKqGSCU4Qgaza1koZJ1Qz7QUoCPWmThlpGYV3gy5\nc1HplVP5alN1vBrCPXQHKzj03QKBgQDtqd/SQeEhW/TrCjC3X3qQ05bhZ80c5+Oj\nj8MtTgEr4DpRUe3UcJ1cfVtkogKJ7LMs8vN2MycGkY6oDNJu03rZG8kmYODleppi\nr7rGY97UvDwl4fyMNDuecjbs8f+mMwD5eMwEY4Fb/blc0rOx4K8lvo0uAngjoJeG\nJglnE07d3QKBgQDi56rBEsfNhjfn4z+/oZCfPw6dM1OfLP/B4V63apMYkw5Qrgmk\nDfCtB9a/56mLZfLtfh3kNinrXI7jCdbHduOwEdj7MioL/Yffv6zrKeViosaqP15t\nupPgty6Q4+eeXxJ2Tk4EvkKKX5YXTPrXo0PVvDi5fmVmYwcP/SoPQ55sMQKBgDix\n95Te5mfg2fJgAfMcsc5uy2WGL6Yfo2xXVUYvf5QJ75+KneO54bA4r164T0a70pp8\ncpvV5A9rFc79EA4kIQA94qRnI/9aWg4Ewdel53h0VxzqZibEJxzLPlMT/9qT/D2H\nFZROcIOTaW69TOS4JtAoPuGk8Sf+nWcBF+kg8AV5AoGAeHykJD5/k2QGvMPQUyrg\ngDTSIuWEuh3XRFiNDAzLkRiXThu4f3hkmLqW+LyLDfHIPP37HtmLPZeHK6zoBX7u\nwdwCwpm2Rzdx3LuvBCpeF4YGzMy7h8pxe+QOsRp4VybBDCjIqxTgcoRjI+OrH+Aj\n8Xkfoh9gaThLCGH6WYe7Efs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "analistadatos@lecturarezagos.iam.gserviceaccount.com",
+  "client_id": "106213044462335558539",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/analistadatos%40lecturarezagos.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
