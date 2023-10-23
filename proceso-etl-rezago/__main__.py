@@ -51,6 +51,9 @@ def run():
     #Rutas para leer los archivos
     ov_rezagadas = []
     dias_rezago = []
+
+    db.reinicio_rezagos()
+
     for archivo in NOMBRES_ARCHIVOS:
         
         #Lectura tabla archivo
@@ -64,8 +67,9 @@ def run():
         for linea in lineas:
             ov_rezagadas.append(tabla_excel[MES_LECTURA]['F'][linea-1].value)
 
-        print(f"\nov_rezagadas")
-        print(f'\nSe han encontrado ov rezagadas en las lineas {lineas}')
+        print(f"\nAlmacen: {archivo}")
+        # print(f"\nov_rezagadas: {ov_rezagadas}")
+        # print(f'\nSe han encontrado ov rezagadas en las lineas {lineas}')
 
         db.update_venta(ov_rezagadas,dias_rezago)
 

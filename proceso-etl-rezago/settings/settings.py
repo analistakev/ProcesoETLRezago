@@ -11,9 +11,14 @@ ID_ARCHIVOS = ['1lZIBCHGWGQpG1gdZTE6nFRWis-wQ0vYtAY_dmbnPbOk',
                '1KGEGOctDlfgfFUi_b7KFYGRCNDsXaqP1V-1FouF82ts',
                '1HIaGU8EqbJ3r_5fBxxxc3idtABUNdj-qhtWXFPC9vKo',
                '11QoV5qSNOAB-vF5yc0zYqsvXsLhySFdR5_BBqcLYUY4',
-               '1WYqLk3cCVP7VNwqtx9eKtZzPjy8i5ly8nAEe3cyVAOo']
+               '1WYqLk3cCVP7VNwqtx9eKtZzPjy8i5ly8nAEe3cyVAOo',
+               '1SR3xaMVKgxiR4P0zd9eUddgKwa-zMGSXTZ0f370iFcM',
+               '1DQEhDFcTzDnGmOsLBc8WNDYMBNOPg1ylNoLbuUsTfCg',
+               '1Ob9aVrIg_IZLAKO2KjTX21aNwJOE14XDOGnwC9WEMAc']
 
-NOMBRES_ARCHIVOS = ['Veracruz.xlsx','Leon.xlsx','Tijuana.xlsx','Monterrey.xlsx','Merida.xlsx','Guadalajara']
+NOMBRES_ARCHIVOS = ['Veracruz.xlsx','Leon.xlsx','Tijuana.xlsx',
+                    'Monterrey.xlsx','Merida.xlsx','Guadalajara.xlsx',
+                    'Cuautitlan.xlsx','Chihuahua.xlsx','Aguascalientes.xlsx']
 
 #BASE DE DATOS
 DB_HOST = 'localhost' 
