@@ -37,13 +37,16 @@ def update_venta(ordenes:list,dias:list):
     #Carga de Articulos
     for i in range(len(ordenes)):
         
-        print(f"Query No. {i}: {ordenes[i]}")
+        #print(f"Query No. {i}: {ordenes[i]}")
         query = f"UPDATE ventassolarever.venta SET venta.culminado = 'N',venta.diasrezago = \'{dias[i]}\' WHERE venta.ordenventa = \'{ordenes[i]}\';" 
-        print(query)
         run_query(query)
     
-    print(f"Registros acutalizados: {i + 1}")
-    print("\nBase actualizada!")
+    try:
+        print(f"Registros acutalizados: {i}")
+    except:        
+        print(f"Registros acutalizados: 0")
+    
+    #print("\nBase actualizada!")
 
 
 def reinicio_rezagos():
