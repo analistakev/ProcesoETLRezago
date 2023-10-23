@@ -3,7 +3,7 @@
 #When you did the last, type: "pip install -e <directory-of-your-package>" in the terminal to finish the installation 
 #It's necessary have the requirements.txt archive before the installation
 
-from setuptools import setup
+from setuptools import setup, find_packages
 import os
 
 #requirements.txt lecture
@@ -20,6 +20,6 @@ setup(
    description='Este modulo contiene las funciones de la manipulación de archivos excel',
    author='KevCangas',
    author_email='kevin.guerrero@solarever.com.mx',
-   packages= [os.path.abspath(os.getcwd())],  # would be the same as name
+   packages= find_packages(),  # would be the same as name
    install_requires=requires #external packages acting as dependencies
 )

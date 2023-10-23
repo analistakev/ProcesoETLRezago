@@ -1,11 +1,11 @@
-import os 
+import pathlib
 import io
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 from google.oauth2 import service_account
 
 
-from settings import *
+from settings.settings import *
 
 
 #Función encargada de descargar archivos de DRIVE
@@ -28,7 +28,7 @@ def descargar(file_ids:list, file_names:list):
 
         fh.seek(0)
 
-        with open(os.path.join("./datos/", file_name), "wb") as f:
+        with open(pathlib.Path(pathlib.Path(),'proceso-etl-rezago','datos',file_name).absolute(), "wb") as f:
             f.write(fh.read())
             f.close()
 
