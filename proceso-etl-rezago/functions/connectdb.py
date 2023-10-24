@@ -1,8 +1,9 @@
+#Propias
 from settings.settings import *
 
-import MySQLdb
-import sys
 
+#Externas
+import MySQLdb
 from progress.bar import ChargingBar
 
 
@@ -42,12 +43,10 @@ def update_venta(ordenes:list,dias:list):
         run_query(query)
     
     try:
-        print(f"Registros acutalizados: {i}")
+        print(f"Registros actualizados: {i}")
     except:        
-        print(f"Registros acutalizados: 0")
+        print(f"Registros actualizados: 0")
     
-    #print("\nBase actualizada!")
-
 
 def reinicio_rezagos():
     query = f"UPDATE ventassolarever.venta SET venta.culminado = 'S';" 

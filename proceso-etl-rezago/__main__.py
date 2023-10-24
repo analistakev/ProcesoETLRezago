@@ -10,6 +10,7 @@ import openpyxl
 #Propias
 import functions.conectdrive as drive
 import functions.connectdb as db
+import functions.creacionreporte as cr
 from settings.settings import *
 
 
@@ -28,7 +29,9 @@ def identificacion_ov(celdas_color,celdas_valor):
         element += 1
         #print(celda.fill.fgColor.rgb)
         try:
-            if (celda.fill.fgColor.rgb == color_rosa or celda.fill.fgColor.rgb == color_verde or celda.fill.fgColor.rgb == color_blanco) and (int(celdas_valor[i].value) >= 10):
+            if (celda.fill.fgColor.rgb == color_rosa) or \
+                ((celda.fill.fgColor.rgb == color_verde or celda.fill.fgColor.rgb == color_blanco) and \
+                 (int(celdas_valor[i].value) >= 10)):
                 celdas_rezagadas.append(element)
                 dias_rezago.append(int(celdas_valor[i].value))
         except:
@@ -76,6 +79,8 @@ def run():
         lineas = []
         dias_rezago = []
         ov_rezagadas = []
+    
+    cr.create_excel()
     
     print("\nListo!")
 
