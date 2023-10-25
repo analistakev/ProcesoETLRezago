@@ -1,6 +1,4 @@
 #Python
-import sys
-import time
 import warnings
 import pathlib
 
@@ -13,13 +11,15 @@ import functions.connectdb as db
 import functions.creacionreporte as cr
 from settings.settings import *
 
-
 #Función que encuentra las ordenes rezagadas
+
+COLOR_ROSA = 'FFFF00FF'
+COLOR_VERDE = 'FF00FF00'
+COLOR_BLANCO = '00000000'
+COLOR_AMARILLO = 'FFFFFF00'
+
+
 def identificacion_ov(celdas_color,celdas_valor):
-    #Colores a identificar
-    color_rosa = 'FFFF00FF'
-    color_verde = 'FF00FF00'
-    color_blanco = '00000000'
 
     #Declaración de los elementos
     element = 0
@@ -27,11 +27,10 @@ def identificacion_ov(celdas_color,celdas_valor):
     dias_rezago = []
     for i,celda in enumerate(celdas_color):
         element += 1
-        #print(celda.fill.fgColor.rgb)
         try:
-            if (celda.fill.fgColor.rgb == color_rosa) or \
-                ((celda.fill.fgColor.rgb == color_verde or celda.fill.fgColor.rgb == color_blanco) and \
-                 (int(celdas_valor[i].value) >= 10)):
+            if (celda.fill.fgColor.rgb == COLOR_ROSA) or \
+                ((celda.fill.fgColor.rgb == COLOR_VERDE or celda.fill.fgColor.rgb == COLOR_BLANCO or celda.fill.fgColor.rgb == COLOR_AMARILLO) \
+                 and (int(celdas_valor[i].value) >= 10)):
                 celdas_rezagadas.append(element)
                 dias_rezago.append(int(celdas_valor[i].value))
         except:
@@ -45,8 +44,6 @@ def run():
     #Desactivacion de precauciones
     warnings.filterwarnings("ignore")
     
-    #Lectura del mes a leer
-    MES_LECTURA = sys.argv[1]
 
     #Descarga del archivo
     drive.descargar(ID_ARCHIVOS,NOMBRES_ARCHIVOS)
@@ -59,22 +56,26 @@ def run():
 
     for archivo in NOMBRES_ARCHIVOS:
         
+        print("\033[1;33m"+f"\nAlmacen: {archivo}"+'\033[0;m')
+
         #Lectura tabla archivo
         ruta = pathlib.Path(pathlib.Path(),'proceso-etl-rezago','datos',archivo)
-        tabla_excel = openpyxl.load_workbook(ruta, data_only=True)
+        excel = openpyxl.load_workbook(ruta, data_only=True)
         
         #Identificación de ordenes rezadas
-        lineas,dias_rezago = identificacion_ov(tabla_excel[MES_LECTURA]['B'],tabla_excel[MES_LECTURA]['A'])
+        nombre_hoja = 'OCTUBRE 2023'
+        lineas,dias_rezago = identificacion_ov(excel[nombre_hoja]['B'], excel[nombre_hoja]['A'])
 
         #Guardado de las ordenes de venta rezagadas
-        for linea in lineas:
-            ov_rezagadas.append(tabla_excel[MES_LECTURA]['F'][linea-1].value)
+        for i,linea in enumerate(lineas):
+            ov_rezagadas.append(excel[nombre_hoja]['F'][linea-1].value.strip())
+            print(f"Linea: {linea} | Orden de venta: {excel[nombre_hoja]['F'][linea-1].value} | Días de rezago: {dias_rezago[i]}")
 
-        print(f"\nAlmacen: {archivo}")
+        print(f"\nLíneas con rezagos: {lineas}")
         # print(f"\nov_rezagadas: {ov_rezagadas}")
         # print(f'\nSe han encontrado ov rezagadas en las lineas {lineas}')
 
-        db.update_venta(ov_rezagadas,dias_rezago)
+        db.update_venta(ov_rezagadas, dias_rezago)
 
         lineas = []
         dias_rezago = []
@@ -82,7 +83,7 @@ def run():
     
     cr.create_excel()
     
-    print("\nListo!")
+    print("\nProceso terminado, rezagos actualizados.")
 
 
 #Punto de entrada

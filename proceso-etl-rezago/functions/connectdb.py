@@ -38,8 +38,8 @@ def update_venta(ordenes:list,dias:list):
     #Carga de Articulos
     for i in range(len(ordenes)):
         
-        #print(f"Query No. {i}: {ordenes[i]}")
         query = f"UPDATE ventassolarever.venta SET venta.culminado = 'N',venta.diasrezago = \'{dias[i]}\' WHERE venta.ordenventa = \'{ordenes[i]}\';" 
+        print(f"Query No. {i}: {query}")
         run_query(query)
     
     try:

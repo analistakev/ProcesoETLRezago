@@ -15,10 +15,12 @@ ID_ARCHIVOS = ['1lZIBCHGWGQpG1gdZTE6nFRWis-wQ0vYtAY_dmbnPbOk',
                '1SR3xaMVKgxiR4P0zd9eUddgKwa-zMGSXTZ0f370iFcM',
                '1DQEhDFcTzDnGmOsLBc8WNDYMBNOPg1ylNoLbuUsTfCg',
                '1Ob9aVrIg_IZLAKO2KjTX21aNwJOE14XDOGnwC9WEMAc']
+               #'1gjLcFy2oO_WltbniNr0rbJ5uxVBzogHA']
 
 NOMBRES_ARCHIVOS = ['Veracruz.xlsx','Leon.xlsx','Tijuana.xlsx',
                     'Monterrey.xlsx','Merida.xlsx','Guadalajara.xlsx',
                     'Cuautitlan.xlsx','Chihuahua.xlsx','Aguascalientes.xlsx']
+                    #'Tecoman.xlsx']
 
 #BASE DE DATOS
 DB_HOST = 'localhost' 
