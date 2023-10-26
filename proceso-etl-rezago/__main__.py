@@ -1,6 +1,7 @@
 #Python
 import warnings
 import pathlib
+import sys
 
 #Externas
 import openpyxl 
@@ -44,7 +45,12 @@ def run():
     #Desactivacion de precauciones
     warnings.filterwarnings("ignore")
     
-
+    #Hoja a analizar
+    try:
+        nombre_hoja = sys.argv[1]
+    except:
+        nombre_hoja = 'OCTUBRE 2023'
+    
     #Descarga del archivo
     drive.descargar(ID_ARCHIVOS,NOMBRES_ARCHIVOS)
 
@@ -63,7 +69,6 @@ def run():
         excel = openpyxl.load_workbook(ruta, data_only=True)
         
         #Identificación de ordenes rezadas
-        nombre_hoja = 'OCTUBRE 2023'
         lineas,dias_rezago = identificacion_ov(excel[nombre_hoja]['B'], excel[nombre_hoja]['A'])
 
         #Guardado de las ordenes de venta rezagadas

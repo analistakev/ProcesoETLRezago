@@ -1,10 +1,14 @@
+#Python
 import pathlib
-
-import pandas as pd
 import csv
-from settings.settings import *
 
+#Externas
+import pandas as pd
+
+#Propias
+from settings.settings import *
 from .connectdb import run_query
+
 
 def create_excel():
 
@@ -16,8 +20,8 @@ def create_excel():
         for x in data:
             c.writerow(x)
 
-    report = pd.read_csv(pathlib.Path(pathlib.Path(),'proceso-etl-rezago','datos','reporte.csv').absolute(),header=None)
-    report.columns = ['Almacen','Orden Venta','Factura','Descripcion','Unidades','Fecha Facturacion','Dias Rezago']
+    report = pd.read_csv(pathlib.Path(pathlib.Path(),'proceso-etl-rezago','datos','reporte.csv').absolute(),header=None,encoding='latin-1')
+    report.columns = ['Almacen','Orden Venta','Factura','Vendedor','Producto','Unidades','Cliente','Fecha Facturacion','Dias Rezago']
     report.to_excel(pathlib.Path(pathlib.Path(),'proceso-etl-rezago','salida','reporte.xlsx').absolute(), index=False)
 
     print("\nReporte Generado")
